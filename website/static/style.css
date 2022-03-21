@@ -25,7 +25,7 @@
 /* styles afecting whole page */
 
 html {
-    background: url(../static/site-source/signup2.jpg) no-repeat center center fixed; 
+    background: url(../static/site-source/background.jpeg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -171,4 +171,7 @@ sign up form
 }
 .invalid-feedback {
     color: red;
+}
+.h-100px {
+    height: 70px;
 }
