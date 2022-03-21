@@ -1,13 +1,16 @@
 {% extends "layout.html" %}
+{% block import %}
+<link rel="stylesheet" href="../static/signup.css">
+{% endblock import %}
+
 {% block content %}
-<div class="main flex flex-col">
-    <h1 class="Login_to_Netflix">Sign Up To Netflix</h1>
+<div class="main">
 
     <div class="sign-up">
         <form method="POST" action="">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class=""><img src="../static/site-source/hejflix.png" alt=""></legend>
+                <legend class="">Sign Up Now Bruv</legend>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label") }}
                     <br>

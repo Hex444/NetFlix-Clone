@@ -8,10 +8,8 @@ if __name__ == "__main__":
 
 """
 
-separate css data between files, add reference to them in templates
-fix navbar
+finish login
 finish login logout sys
-make your first database item
-redesign EVERYTHING
+work with api
 
 """

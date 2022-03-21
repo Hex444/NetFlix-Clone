@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@500&display=swap');
+
+
+
+/* css reset */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Smooch Sans', sans-serif;
+}
+
+/* variables and usables */
+:root {
+    --netflix-red: #E50914;
+    --netflix-red-dark: #b7252c;
+    --netflix-black: #221F1F;
+    --netflix-black-dark: #0a0a0a;
+    --navbar-color: rgba(0,0,0,0.3);
+    --netflix-white: #F5F5F1;
+}
+
+/* styles afecting whole page */
+
+html {
+    background: url(../static/site-source/background.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+
+
+
+
