@@ -30,7 +30,7 @@ loginmanager.login_view = 'auth.login'
 def load_user(user_id):
     return User.query.get(int(user_id))
 
-from .auth import auth
 from .views import views
+from .auth import auth
 app.register_blueprint(views)
 app.register_blueprint(auth)

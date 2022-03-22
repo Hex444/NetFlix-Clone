@@ -1,5 +1,5 @@
 from flask import Blueprint, render_template,redirect,url_for,flash
-from flask_login import login_user, logout_user, login_required
+from flask_login import login_user, logout_user, login_required,current_user
 from . import db,bcrypt
 from .forms import RegistrationForm, LoginForm
 from .models import User
@@ -28,8 +28,18 @@ def login():
         if bcrypt.check_password_hash(user.password, form.password.data):
             login_user(user)
             flash(f"your logged in as {user.username} !", category='success')
+            return redirect(url_for('views.home'))
         else:
             flash('Password invalid please try again', category='danger')
         
 
     return render_template('login.html', form=form)
+
+
+
+@auth.route('/logout', methods=['POST', 'GET'])
+@login_required
+def logout():
+    logout_user()
+    flash('logged out!', category='success')
+    return redirect(url_for('auth.login'))

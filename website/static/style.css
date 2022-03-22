@@ -44,6 +44,11 @@
 }
 
 .alert {
+    display: grid;
+    place-items: center;
     height: 6rem;
     font-size: 2rem;
+}
+.dismiss {
+    cursor: pointer;
 }

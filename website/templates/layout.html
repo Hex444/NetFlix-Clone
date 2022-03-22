@@ -15,8 +15,13 @@
             <li><img src="../static/site-source/hejflix.png" alt="logo" class="h-100px"></li>
 
             <li class="nav-list-item"><a class="nav-list-item-link" href="{{ url_for('views.home') }}">home</a></li>
-            <li class="nav-list-item"><a class="nav-list-item-link" href="{{ url_for('auth.login') }}">login</a></li>
-            <li class="nav-list-item"><a class="nav-list-item-link" href="{{ url_for('auth.register') }}">signup</a></li>
+
+            {% if current_user.is_authenticated %}
+                <li class="nav-list-item"><a class="nav-list-item-link" href="{{ url_for('auth.logout') }}">logout</a></li>
+            {% else %}
+                <li class="nav-list-item"><a class="nav-list-item-link" href="{{ url_for('auth.login') }}">login</a></li>
+                <li class="nav-list-item"><a class="nav-list-item-link" href="{{ url_for('auth.register') }}">signup</a></li>
+            {% endif %}
             
         </ul>
     </nav>
@@ -27,10 +32,12 @@
                     {% if category == "error" or category == "danger" %}
                     <div class="bg-red-500 text-red-900 alert" role="alert">
                         {{ message }}
+                        <span class="dismiss">&times;</span>
                     </div>
                     {% else %}
                     <div class="bg-green-600 text-green-900 alert" role="alert">
                         {{ message }}
+                        <span class="dismiss">&times;</span>
                     </div>
                     {% endif %}
                 {% endfor %}
