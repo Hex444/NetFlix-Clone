@@ -5,16 +5,8 @@ if __name__ == '__main__':
 
 """
 
-finish login
+finish logout
 finish login logout sys
 work with api
 
 """
-
-
-'''
-def create_database(app):
-    if not path.exists('website/' + 'database.db'):
-        db.create_all(app=app)
-        print('Created Database')
-'''
