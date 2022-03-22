@@ -1,7 +1,9 @@
-from flask import Blueprint, render_template,redirect,url_for
+from flask import Blueprint, render_template,redirect,url_for,flash
+from flask_login import login_user, logout_user, login_required
 from . import db,bcrypt
-from .forms import RegistrationForm
+from .forms import RegistrationForm, LoginForm
 from .models import User
+from .api import MvFm
 
 auth = Blueprint('auth' ,__name__)
 
@@ -20,4 +22,14 @@ def register():
 
 @auth.route('/login', methods=['POST','GET'])
 def login():
-    return render_template('login.html')
+    form=LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if bcrypt.check_password_hash(user.password, form.password.data):
+            login_user(user)
+            flash(f"your logged in as {user.username} !", category='success')
+        else:
+            flash('Password invalid please try again', category='danger')
+        
+
+    return render_template('login.html', form=form)

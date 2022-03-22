@@ -1,10 +1,7 @@
-from website import create_app
+from website import app
 
-app = create_app()
-
-if __name__ == "__main__":
-    app.run(debug=True)
-
+if __name__ == '__main__':
+	app.run(debug=True)
 
 """
 
@@ -13,3 +10,11 @@ finish login logout sys
 work with api
 
 """
+
+
+'''
+def create_database(app):
+    if not path.exists('website/' + 'database.db'):
+        db.create_all(app=app)
+        print('Created Database')
+'''

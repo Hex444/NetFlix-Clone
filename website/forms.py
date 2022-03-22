@@ -44,5 +44,5 @@ class LoginForm(FlaskForm):
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
-        if user:
+        if not user:
             raise ValidationError('There is no account with that email, please try a different one')

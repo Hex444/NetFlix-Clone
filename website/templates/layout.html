@@ -24,12 +24,12 @@
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category,message in messages %}
-                    {% if category == "error" %}
-                    <div class="bg-red-500 text-red-900" role="alert">
+                    {% if category == "error" or category == "danger" %}
+                    <div class="bg-red-500 text-red-900 alert" role="alert">
                         {{ message }}
                     </div>
                     {% else %}
-                    <div class="bg-green-600 text-green-900" role="alert">
+                    <div class="bg-green-600 text-green-900 alert" role="alert">
                         {{ message }}
                     </div>
                     {% endif %}

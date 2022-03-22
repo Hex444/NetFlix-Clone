@@ -42,3 +42,8 @@
 .nav-list>li>img {
     padding-right: 30rem;
 }
+
+.alert {
+    height: 6rem;
+    font-size: 2rem;
+}
