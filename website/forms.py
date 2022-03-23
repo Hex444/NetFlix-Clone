@@ -37,9 +37,9 @@ class LoginForm(FlaskForm):
     
     password = PasswordField('password',
                         validators=[InputRequired(), Length(min=8,max=50)],
-                        render_kw={"placeholder":"Enter your email"})
+                        render_kw={"placeholder":"Enter your password"})
 
-    submit = SubmitField('Sign Up')
+    submit = SubmitField('Login')
 
 
     def validate_email(self, email):

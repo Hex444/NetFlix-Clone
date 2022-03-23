@@ -31,7 +31,31 @@ html {
     background-size: cover;
 }
 
+div>img {
+    height: 15vh;
+    overflow-x: scroll;
+}
+div.main {
+    display: flex;
+    flex-direction: column;
+}
 
-
-
-
+div.img {
+    margin: 5px;
+}
+html {
+    background-color: rgba(0,0,0,0.9);
+}
+h1.popular {
+    color: white;
+    font-size: 5rem;
+}
+div.img>img:hover {
+    height: 28vh;
+    margin: 0px;
+    transition-duration: 70ms;
+    transition-timing-function: ease-in;
+}
+.container-line {
+    height: 30%;
+}

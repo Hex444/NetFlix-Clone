@@ -1,7 +1,10 @@
 from flask import Blueprint, redirect, render_template,url_for
 from flask_login import login_required,current_user
+from .api import MvFm
 
 views = Blueprint('views' ,__name__)
+api = MvFm()
+poster_path = "https://image.tmdb.org/t/p/original/"
 
 @views.route('/')
 def dash():
@@ -13,7 +16,7 @@ def dash():
 @views.route('/home')
 @login_required
 def home():
-    return render_template('home.html')
+    return render_template('home.html', api=api, poster_path=poster_path, title='home')
 
 @views.route('/welcome')
 def welcome():

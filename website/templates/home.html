@@ -3,5 +3,19 @@
 <link rel="stylesheet" href="../static/home.css">
 {% endblock import %}
 {% block content %}
-Home
+
+
+<div class="main">
+    <h1 class="popular">popular movies</h1>
+    <br>
+    <div class="flex flex-row container-line">
+        {% for movie in api.get_popular() %}
+
+            <div class="img img-container"><img src="{{ poster_path + movie['poster_path'] }}" alt=""></div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
 {% endblock %}
