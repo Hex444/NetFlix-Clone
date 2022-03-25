@@ -6,16 +6,31 @@
 
 
 <div class="main">
-    <h1 class="popular">popular movies</h1>
-    <br>
-    <div class="flex flex-row container-line">
-        {% for movie in api.get_popular() %}
-
-            <div class="img img-container"><img src="{{ poster_path + movie['poster_path'] }}" alt=""></div>
-        {% endfor %}
+    <div class="genre">
+        <h1 class="popular">Top Rated Movies</h1>
+        <br>
+        <div class="flex flex-row container-line-top-rated">
+            {% for movie in api.get_top_rated() %}
+                <div class="img img-container"><img src="{{ poster_path + movie['poster_path'] }}" alt=""></div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="genre">
+        <h1 class="popular">popular movies</h1>
+        <br>
+        <div class="flex flex-row container-line-popular">
+            {% for movie in api.get_popular() %}
+                <div class="img img-container"><img src="{{ poster_path + movie['poster_path'] }}" alt=""></div>
+            {% endfor %}
+        </div>
+    <div class="genre">
+        <h1 class="popular">Trending Movies</h1>
+        <br>
+        <div class="flex flex-row container-line-latest">
+            {% for movie in api.get_trending() %}
+                <div class="img img-container"><img src="{{ poster_path + movie['poster_path'] }}" alt=""></div>
+            {% endfor %}
+        </div>
     </div>
 </div>
-
-
-
 {% endblock %}

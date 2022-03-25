@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Smooch+Sans:wght@500&display=swap');
-
+/* ankush roy help me pls */
 
 
 /* css reset */
@@ -33,7 +33,6 @@ html {
 
 div>img {
     height: 15vh;
-    overflow-x: scroll;
 }
 div.main {
     display: flex;
@@ -51,11 +50,8 @@ h1.popular {
     font-size: 5rem;
 }
 div.img>img:hover {
-    height: 28vh;
+    height: 21vh;
     margin: 0px;
-    transition-duration: 70ms;
+    transition-duration: 300ms;
     transition-timing-function: ease-in;
-}
-.container-line {
-    height: 30%;
 }
