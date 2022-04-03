@@ -33,7 +33,7 @@ def login():
             flash('Password invalid please try again', category='danger')
         
 
-    return render_template('login.html', form=form)
+    return render_template('login.html', form=form, title='Login')
 
 
 

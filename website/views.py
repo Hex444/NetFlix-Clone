@@ -10,7 +10,7 @@ poster_path = "https://image.tmdb.org/t/p/original/"
 def dash():
     if current_user.is_authenticated:
         return redirect(url_for('views.home'))
-    return render_template('newuser.html')
+    return render_template('newuser.html', title='new user')
 
 
 @views.route('/home')
@@ -20,4 +20,4 @@ def home():
 
 @views.route('/welcome')
 def welcome():
-    return render_template('welcome.html')
+    return render_template('welcome.html', title='welcome')
